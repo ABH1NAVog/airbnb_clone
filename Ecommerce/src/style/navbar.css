@@ -1,0 +1,238 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+/* ─── NAVBAR SHELL ─────────────────────────────────────────── */
+.navbar {
+  background: black;
+  color: white;
+  padding: 19px 40px;
+
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  border-bottom: 1px solid #1f1f1f;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ─── TOP ROW ──────────────────────────────────────────────── */
+/* Full width — logo touches left edge, nav-right touches right edge */
+.nav-top-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* NO max-width here — intentionally full width */
+}
+
+/* LEFT — Logo */
+.nav-left {
+  display: flex;
+  align-items: center;
+  /* No flex:1 — just hugs left naturally */
+}
+
+.nav-left img {
+  width: 110px;
+  filter: brightness(0) invert(1); /* white logo on black */
+}
+
+/* CENTER — Nav buttons, truly centered between logo and right buttons */
+.nav-center {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  /* This makes it sit in the true center of the row */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-center button {
+  background: none;
+  border: none;
+  color: #ccc;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 8px 16px;
+  border-radius: 25px;
+  transition: background 0.2s, color 0.2s;
+  font-family: inherit;
+}
+
+.nav-center button:hover {
+  background: #1a1a1a;
+  color: white;
+}
+
+/* RIGHT — Filters + host + menu */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  /* No flex:1 — just hugs right naturally */
+}
+
+.filter-btn {
+  background: transparent;
+  border: 1px solid #555;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 13px;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: border-color 0.2s;
+}
+
+.filter-btn:hover {
+  border-color: #aaa;
+}
+
+.host-btn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.menu {
+  font-size: 20px;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1c1c1c;
+}
+
+/* ─── SEARCH BAR ───────────────────────────────────────────── */
+/* Centered with max-width — sits in the middle below the top row */
+.nav-bottom {
+  max-width: 750px;
+  width: 100%;
+  margin: 0 auto; /* centers the search bar */
+
+  display: flex;
+  align-items: center;
+
+  background: #1c1c1c;
+  border: 1px solid #2a2a2a;
+  border-radius: 40px;
+  padding: 6px 6px 6px 10px;
+
+  transition: all 0.3s ease;
+}
+
+.nav-bottom:hover {
+  border-color: #444;
+  box-shadow: 0 2px 16px rgba(255, 255, 255, 0.05);
+}
+
+/* SEARCH SECTIONS WRAPPER */
+.search-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+/* EACH CLICKABLE ITEM */
+.search-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 6px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.search-item:hover {
+  background: #252525;
+}
+
+.search-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #ccc;
+  letter-spacing: 0.3px;
+}
+
+.search-value {
+  font-size: 13px;
+  color: #777;
+}
+
+/* DIVIDERS */
+.divider {
+  width: 1px;
+  height: 24px;
+  background: #444;
+  flex-shrink: 0;
+}
+
+/* SEARCH BUTTON */
+.search-btn {
+  background: #ff385c;
+  border: none;
+  color: white;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.search-btn:hover {
+  background: #e0314f;
+  transform: scale(1.06);
+}
+
+/* ─── COMPACT MODE (on scroll) ─────────────────────────────── */
+.nav-bottom.compact {
+  transform: scale(0.96);
+  padding: 4px 4px 4px 10px;
+}
+
+.nav-bottom.compact .search-label,
+.nav-bottom.compact .divider {
+  display: none;
+}
+
+.nav-bottom.compact .search-item {
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+}
+
+.nav-bottom.compact .search-value {
+  font-size: 13px;
+  color: #ccc;
+}
+
+.nav-bottom.expanded {
+  height: auto;
+}
+
+
