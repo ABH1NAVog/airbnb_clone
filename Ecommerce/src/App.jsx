@@ -5,12 +5,14 @@ import Home from './pages/home'
 function App() {
 import React from 'react'
 import Navbar from './components/navbar'
+import Product_details from './components/product_details'
 
 export default function App() {
-  return 
-    <>
+
+  return (
+    <div>
       <Navbar />
-      <Home />
-    </>
+      <Product_details/>
+    </div>
   )
 }

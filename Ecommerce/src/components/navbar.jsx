@@ -36,7 +36,7 @@ export default function Navbar() {
           </div>
         )}
 
-        {/* RIGHT — Filters + host + menu sticks to screen edge */}
+
         <div className="nav-right">
           <button className="filter-btn">⚙️ Filters</button>
           <button className="host-btn">Become a host</button>
@@ -45,7 +45,7 @@ export default function Navbar() {
 
       </div>
 
-      {/* SEARCH BAR — centered in the middle, NOT full width */}
+     
       <div className={`nav-bottom ${scrolled ? "compact" : "expanded"}`}>
 
         <div className="search-section">

@@ -1,0 +1,217 @@
+.outer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+}
+.main{
+    
+    width: 60%;
+    padding: 18px;
+    /* background-color: antiquewhite; */
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+   
+}
+.images{
+    height: 150px;
+    width: 100%;
+    height: 450px;
+
+    border-radius: 17px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.images #img1{
+    width: 96%;
+    height: 100%;
+    background-color: yellow;
+    border-radius: 10px;
+}
+#inner{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+    
+
+}
+#img2{
+    background-color: red;
+    border-radius: 10px;
+}
+#img3{
+    background-color: green;
+    border-radius: 10px;
+}
+#img4{
+    background-color: purple;
+    border-radius: 10px;
+}
+#img5{
+    background-color: orange;
+    border-radius: 10px;
+}
+
+.separator{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* MAIN TITLE */
+.title {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+/* SUB INFO */
+.sub-info {
+    color: #555;
+    font-size: 14px;
+}
+
+/* HOST SECTION */
+.host h2 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.host p {
+    color: #777;
+    font-size: 14px;
+}
+
+/* FEATURES */
+.feature h3 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.feature p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* HR STYLE */
+hr {
+    border: none;
+    border-top: 1px solid #ddd;
+}
+.feature:hover {
+    background-color: #f7f7f7;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 0.1s;
+}
+.confirm {
+    background-color: white;
+    position: sticky;
+    top: 120px;
+    margin-top: 50px;
+    margin-left: 60px;
+    width: 70%;
+    padding: 20px;
+    border-radius: 16px;
+
+    border: 1px solid #eee;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: 70%;
+}
+
+/* PRICE */
+.price {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.price span {
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+/* DATE BOX */
+.date-box {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.date {
+    flex: 1;
+    padding: 10px 10px 10px 10px;
+    
+}
+
+.date:first-child {
+    border-right: 1px solid #ccc;
+}
+
+.date h6 {
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.date p {
+    font-size: 14px;
+}
+
+/* GUESTS */
+.guests {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+  
+}
+
+.guests h6 {
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.guests p {
+    font-size: 14px;
+}
+
+/* CANCEL BOX */
+.cancelation {
+    background-color: #f7f7f7;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 12px;
+    color: #555;
+}
+
+/* BUTTON */
+.reserve-btn {
+    background: linear-gradient(90deg, #ff385c, #e61e4d);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 999px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.reserve-btn:hover {
+    opacity: 0.9;
+}
+
+/* NOTE */
+.note {
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+}
