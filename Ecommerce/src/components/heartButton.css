@@ -1,51 +1,40 @@
-.heart-shape {
+.heart-btn {
   position: absolute;
-  top: 15px;
-  right: 15px;
-  width: 18px;
-  height: 18px;
-  background: #ccc; /* default gray */
-  border: 1px solid #fff;
-  cursor: pointer;
-  transform: rotate(-45deg);
-  transition: background 0.3s ease, transform 0.2s ease;
-  padding: 0;
-  z-index: 2;
-}
-
-/* lobes of the heart */
-.heart-shape::before,
-.heart-shape::after {
-  content: "";
-  position: absolute;
-  width: 18px;
-  height: 18px;
-  background: inherit;
+  top: 10px;
+  right: 5px;
+  width: 34px;
+  height: 34px;
+  border: none;
+  background: rgba(0, 0, 0, 0);
   border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(1px);
+  z-index: 5;
+  transition: transform 0.2s ease;
 }
 
-.heart-shape::before {
-  top: -9px; /* half of height */
-  left: 0;
+.heart-btn:hover {
+  transform: scale(1.12);
 }
 
-.heart-shape::after {
-  left: 9px; /* half of width */
-  top: 0;
+.heart-btn:active {
+  transform: scale(0.95);
 }
 
-/* Active (liked) state */
-.heart-shape.active {
-  background: #ff385c; /* Airbnb red */
+.heart-svg {
+  width: 20px;
+  height: 20px;
+  fill: rgba(169, 168, 168, 0.8);
+  stroke: white;
+  stroke-width: 2;
+  transition: fill 0.3s ease, stroke 0.3s ease;
 }
 
-.heart-shape.active::before,
-.heart-shape.active::after {
-  background: #ff385c;
+/* clicked state */
+.heart-btn.liked .heart-svg {
+  fill: #ff385c;
+  stroke: #ff385c;
 }
-
-/* Hover effect */
-.heart-shape:hover {
-  transform: rotate(-45deg) scale(1.2);
-}
-    
