@@ -1,0 +1,40 @@
+.heart-btn {
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  width: 34px;
+  height: 34px;
+  border: none;
+  background: rgba(0, 0, 0, 0);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(1px);
+  z-index: 5;
+  transition: transform 0.2s ease;
+}
+
+.heart-btn:hover {
+  transform: scale(1.12);
+}
+
+.heart-btn:active {
+  transform: scale(0.95);
+}
+
+.heart-svg {
+  width: 20px;
+  height: 20px;
+  fill: rgba(169, 168, 168, 0.8);
+  stroke: white;
+  stroke-width: 2;
+  transition: fill 0.3s ease, stroke 0.3s ease;
+}
+
+/* clicked state */
+.heart-btn.liked .heart-svg {
+  fill: #ff385c;
+  stroke: #ff385c;
+}
