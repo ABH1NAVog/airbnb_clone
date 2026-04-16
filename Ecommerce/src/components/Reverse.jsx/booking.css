@@ -1,0 +1,286 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* MAIN LAYOUT */
+.booking-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+}
+
+.booking-left {
+  width: 55%;
+}
+
+.booking-right {
+  width: 35%;
+}
+
+/* STEP CARD */
+.step-card {
+  background: #f7f7f7;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.step-card.active {
+  background: white;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+
+.continue-btn {
+  background: #ff385c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* BOOKING CARD */
+.booking-card {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.property {
+  display: flex;
+  gap: 10px;
+}
+
+.property img {
+  width: 80px;
+  border-radius: 8px;
+}
+
+.policy {
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+/* INFO ROW */
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+}
+
+.info-row button {
+  background: #eee;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+
+/* PRICE */
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+}
+
+.price-total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.breakdown {
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* MODAL OVERLAY */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* MODAL BOX */
+.modal {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  width: 400px;
+  position: relative;
+  text-align: center;
+}
+
+/* CLOSE BUTTON */
+.close-btn {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* INPUT */
+.input {
+  width: 100%;
+  padding: 12px;
+  margin: 15px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* FULL BUTTON */
+.full {
+  width: 100%;
+}
+
+/* OR TEXT */
+.or {
+  margin: 15px 0;
+}
+
+/* SOCIAL BUTTONS */
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.socials button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: white;
+}
+
+/* OVERLAY with BLUR */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* MODAL */
+.modal {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  width: 400px;
+  text-align: center;
+  position: relative;
+}
+
+/* ANIMATION */
+.animate {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* CLOSE */
+.close-btn {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  cursor: pointer;
+}
+
+/* TITLE */
+.title {
+  margin: 10px 0;
+}
+
+/* INPUT */
+.input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* ERROR */
+.error {
+  color: red;
+  font-size: 12px;
+  text-align: left;
+  margin-top: 5px;
+}
+
+/* BUTTON */
+.continue-btn {
+  background: #ff385c;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.full {
+  width: 100%;
+}
+
+/* DIVIDER */
+.divider {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+}
+
+.divider span {
+  margin: 0 auto;
+  font-size: 14px;
+}
+
+/* SOCIAL */
+.social-btn {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.social-btn img {
+  width: 20px;
+}
+
+.logo-icon {
+  font-size: 40px;
+  color: #ff385c;
+  margin-bottom: 10px;
+}
+
+.modal {
+  text-align: center;
+}
