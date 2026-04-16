@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./booking.css";
-import { FaAirbnb } from "react-icons/fa";
+import { FaAirbnb } from "react-icons/fa6";
 
 const LoginModal = ({ closeModal }) => {
   const [input, setInput] = useState("");
@@ -57,7 +57,6 @@ const LoginModal = ({ closeModal }) => {
             src="https://cdn-icons-png.flaticon.com/512/281/281764.png"
             alt="google"
           />
-          Continue with Google
         </div>
 
         <div className="social-btn">
@@ -65,7 +64,6 @@ const LoginModal = ({ closeModal }) => {
             src="https://cdn-icons-png.flaticon.com/512/0/747.png"
             alt="apple"
           />
-          Continue with Apple
         </div>
 
       </div>

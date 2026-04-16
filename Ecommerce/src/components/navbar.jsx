@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../style/navbar.css';
 
 export default function Navbar({ onSearch }) {
-
+  const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
   const [searchLocation, setSearchLocation] = useState('Homes nearby');
   const [searchDate, setSearchDate] = useState('Any week');
@@ -164,23 +165,23 @@ export default function Navbar({ onSearch }) {
       <div className="nav-top-row">
 
         {/* LEFT — Logo sticks to screen edge */}
-        <div className="nav-left">
+        <div className="nav-left" onClick={() => navigate('/')}>
           {/* <img src="https://www.logo.wine/a/logo/Airbnb/Airbnb-Logo.wine.svg" alt="logo" /> */}
-          <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Airbnb_Logo_B%C3%A9lo.svg/960px-Airbnb_Logo_B%C3%A9lo.svg.png' alt='logo'></img>
+          {/* <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Airbnb_Logo_B%C3%A9lo.svg/960px-Airbnb_Logo_B%C3%A9lo.svg.png' alt='logo'></img> */}
+          <img src='https://res.cloudinary.com/dn0zhkoxj/image/upload/v1776330069/logo_dqz1ph.jpg' alt='logo'></img>
         </div>
 
         {/* CENTER — Nav links centered in the middle of the screen */}
         {!scrolled && (
           <div className="nav-center">
-            <button>🏠 Homes</button>
-            <button>🎈 Experiences</button>
-            <button>🛎️ Services</button>
+            <button onClick={() => navigate('/')}>🏠 Homes</button>
+            <button onClick={() => navigate('/experiences')}>🎈 Experiences</button>
+            <button onClick={() => navigate('/services')}>🛎️ Services</button>
           </div>
         )}
 
 
         <div className="nav-right">
-          <button className="filter-btn">⚙️ Filters</button>
           <button className="host-btn">Become a host</button>
           <div className="menu">☰</div>
         </div>

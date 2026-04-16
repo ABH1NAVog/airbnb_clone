@@ -1,0 +1,113 @@
+.service-page {
+  padding: 40px 80px;
+  font-family: Arial, sans-serif;
+  background: white;
+}
+
+.service-page h1 {
+  font-size: 48px;
+  margin: 50px 0 30px;
+}
+
+.service-page h2 {
+  font-size: 38px;
+  margin-bottom: 25px;
+}
+
+.section-title {
+  font-size: 30px;
+  margin-bottom: 25px;
+}
+
+/* ---------- TOP SMALL CARDS ---------- */
+.top-services-row {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+}
+
+.top-services-row::-webkit-scrollbar {
+  display: none;
+}
+
+.small-service-card {
+  min-width: 180px;
+  flex-shrink: 0;
+}
+
+.small-image-placeholder {
+  width: 180px;
+  height: 160px;
+  border-radius: 20px;
+  background: #e8e8e8;
+  margin-bottom: 10px;
+}
+
+.small-service-card h4 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.small-service-card p {
+  font-size: 18px;
+  color: gray;
+  margin-top: 6px;
+}
+
+/* ---------- BOTTOM LARGE CARDS UPDATED ---------- */
+.bottom-services-row {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+}
+
+.bottom-services-row::-webkit-scrollbar {
+  display: none;
+}
+
+.large-service-card {
+  width: 180px;
+  min-width: 180px;
+  flex-shrink: 0;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+.large-image-placeholder {
+  width: 100%;
+  height: 160px;
+  border-radius: 12px;
+  background: #e6e6e6;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+.large-service-card h3 {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0 0 4px;
+  line-height: 1.4;
+}
+
+.large-service-card p {
+  font-size: 14px;
+  color: #555;
+  margin: 0 0 6px;
+}
+
+.large-service-card span {
+  display: block;
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 6px;
+}
+
+.large-service-card h5 {
+  font-size: 13px;
+  margin: 0;
+  color: #222;
+}
