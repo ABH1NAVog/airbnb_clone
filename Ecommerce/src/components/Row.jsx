@@ -81,6 +81,12 @@ function OnePlaceRow({ searchCity, searchParams, clearSearch }) {
               key={listing.id}
               to={`/product-details/${listing.id}`}
               className="row-card-link"
+              onClick={(e) => {
+                // Check if the clicked element is the heart button or its child
+                if (e.target.closest('.heart-btn')) {
+                  e.preventDefault();
+                }
+              }}
             >
               <Card
                 title={listing.title}

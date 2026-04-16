@@ -7,7 +7,10 @@ function HeartButton() {
   return (
     <button
       className={`heart-btn ${liked ? "liked" : ""}`}
-      onClick={() => setLiked(!liked)}
+      onClick={(e) => {
+        e.stopPropagation();
+        setLiked(!liked);
+      }}
       aria-label="wishlist"
     >
       <svg

@@ -259,11 +259,12 @@
 
 
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom'; // Add this import
+import { useParams, useNavigate } from 'react-router-dom'; // Add this import
 import "../style/product_details.css";
 
 export default function Product_details() {
   const { id } = useParams(); // Get the listing ID from URL
+  const navigate = useNavigate();
   const [listing, setListing] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -337,6 +338,20 @@ export default function Product_details() {
   }
 
   const images = Array.isArray(listing.images) ? listing.images : [];
+
+  const handleReserve = () => {
+    const bookingData = {
+      image: images[0] || "https://via.placeholder.com/420",
+      title: listing.title,
+      location: listing.location || "Unknown location",
+      dates: `${new Date(checkIn).toLocaleDateString()} - ${new Date(checkOut).toLocaleDateString()}`,
+      guests: selectedGuests,
+      price: listing.price,
+      nights: nights,
+      totalPrice: totalPrice
+    };
+    navigate('/booking', { state: bookingData });
+  };
 
   return (
     <div className='outer'>
@@ -426,7 +441,7 @@ export default function Product_details() {
             <div className='cancelation'>
               Free cancellation before {new Date(checkIn).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
             </div>
-            <button className='reserve-btn'>Reserve</button>
+            <button className='reserve-btn' onClick={handleReserve}>Reserve</button>
             <p className='note'>You won't be charged yet</p>
           </div>
         </div>
