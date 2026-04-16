@@ -1,0 +1,125 @@
+.rows-wrapper {
+  width: 100%;
+}
+
+.row-container {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(240px, 1fr));
+  gap: 16px;
+  padding: 24px 40px;
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+  align-items: stretch;
+}
+
+.card-item {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 1200px) {
+  .row-container {
+    grid-template-columns: repeat(4, minmax(220px, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .row-container {
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .row-container {
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .row-container {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+}
+
+.row-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Search Results Header */
+.search-results-header {
+  padding: 40px 40px 20px 40px;
+  max-width: 1280px;
+  margin: 0 auto;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.search-results-header h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  color: #222;
+}
+
+.search-results-header p {
+  font-size: 16px;
+  color: #666;
+  margin: 0 0 16px 0;
+}
+
+.clear-search-btn {
+  background: white;
+  border: 1px solid #e0e0e0;
+  color: #222;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.clear-search-btn:hover {
+  border-color: #222;
+  background: #f7f7f7;
+}
+
+.clear-search-btn:active {
+  transform: scale(0.98);
+}
+
+/* No Results Message */
+.no-results {
+  text-align: center;
+  padding: 80px 40px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.no-results p {
+  font-size: 24px;
+  color: #666;
+  margin: 0 0 24px 0;
+}
+
+.no-results .clear-search-btn {
+  background: #ff385c;
+  color: white;
+  border: none;
+  padding: 12px 32px;
+  font-size: 16px;
+}
+
+.no-results .clear-search-btn:hover {
+  background: #e0314f;
+  border-color: transparent;
+}
