@@ -380,7 +380,9 @@ export default function Product_details() {
           <div className='details'>
             <h1 className='title'>{listing.title}</h1>
             <p className='sub-info'>
-              {listing.guests} guests · {listing.beds} bedroom · {listing.beds} bed · {listing.bathrooms} private bathroom
+              <span>👥 {listing.guests} {listing.guests === 1 ? 'guest' : 'guests'}</span> · 
+              <span>🛏️ {listing.beds} {listing.beds === 1 ? 'bedroom' : 'bedrooms'}</span> · 
+              <span>🚿 {listing.bathrooms} {listing.bathrooms === 1 ? 'bathroom' : 'bathrooms'}</span>
             </p>
             <hr />
             <div className='host'>

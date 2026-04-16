@@ -5,11 +5,12 @@ import '../style/navbar.css';
 export default function Navbar({ onSearch }) {
   const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
-  const [searchLocation, setSearchLocation] = useState('Homes nearby');
+  const [searchLocation, setSearchLocation] = useState('');
   const [searchDate, setSearchDate] = useState('Any week');
   const [searchDateRange, setSearchDateRange] = useState({ start: '', end: '' });
   const [searchGuests, setSearchGuests] = useState('Add guests');
   const [activeSearchField, setActiveSearchField] = useState(null);
+  const [showMenu, setShowMenu] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,17 +21,20 @@ export default function Navbar({ onSearch }) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Handle click outside to close search fields
+  // Handle click outside to close search fields and menu
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (activeSearchField && !e.target.closest('.search-item') && !e.target.closest('.date-picker-popup')) {
         setActiveSearchField(null);
       }
+      if (showMenu && !e.target.closest('.menu') && !e.target.closest('.dropdown-menu')) {
+        setShowMenu(false);
+      }
     };
 
     document.addEventListener('click', handleClickOutside);
     return () => document.removeEventListener('click', handleClickOutside);
-  }, [activeSearchField]);
+  }, [activeSearchField, showMenu]);
 
   // Get today's date
   const getDateString = (date) => {
@@ -76,9 +80,25 @@ export default function Navbar({ onSearch }) {
     setActiveSearchField(activeSearchField === 'guest' ? null : 'guest');
   };
 
-  // Handle location changes
+  // Handle menu toggle
+  const handleMenuToggle = () => {
+    setShowMenu(!showMenu);
+  };
+
+  // Close menu when navigating
+  const handleMenuItemClick = (callback) => {
+    setShowMenu(false);
+    if (callback) callback();
+  };
   const handleLocationChange = (e) => {
     setSearchLocation(e.target.value);
+  };
+
+  // Handle Enter key on location input
+  const handleLocationKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleSearch();
+    }
   };
 
   // Handle date range changes
@@ -130,7 +150,7 @@ export default function Navbar({ onSearch }) {
 
   // Handle search button click
   const handleSearch = () => {
-    if (!searchLocation || searchLocation === 'Homes nearby') {
+    if (!searchLocation) {
       alert('Please enter a location to search');
       return;
     }
@@ -168,7 +188,7 @@ export default function Navbar({ onSearch }) {
         <div className="nav-left" onClick={() => navigate('/')}>
           {/* <img src="https://www.logo.wine/a/logo/Airbnb/Airbnb-Logo.wine.svg" alt="logo" /> */}
           {/* <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Airbnb_Logo_B%C3%A9lo.svg/960px-Airbnb_Logo_B%C3%A9lo.svg.png' alt='logo'></img> */}
-          <img src='https://res.cloudinary.com/dn0zhkoxj/image/upload/v1776330069/logo_dqz1ph.jpg' alt='logo'></img>
+          <img src='/logo.jpeg' alt='logo'></img>
         </div>
 
         {/* CENTER — Nav links centered in the middle of the screen */}
@@ -183,7 +203,36 @@ export default function Navbar({ onSearch }) {
 
         <div className="nav-right">
           <button className="host-btn">Become a host</button>
-          <div className="menu">☰</div>
+          <div className="menu" onClick={handleMenuToggle}>
+            ☰
+            {showMenu && (
+              <div className="dropdown-menu">
+                <div className="menu-item">
+                  <span className="menu-icon">❓</span>
+                  <span className="menu-text">Help Centre</span>
+                </div>
+                <div className="menu-divider"></div>
+                <div className="menu-item" onClick={() => handleMenuItemClick(() => navigate('/'))}>                  <span className="menu-icon">🏠</span>
+                  <div className="menu-item-content">
+                    <span className="menu-text-bold">Become a host</span>
+                    <span className="menu-text-small">It's easy to start hosting and earn extra income.</span>
+                  </div>
+                </div>
+                <div className="menu-item">
+                  <span className="menu-icon">🔗</span>
+                  <span className="menu-text">Refer a host</span>
+                </div>
+                <div className="menu-item">
+                  <span className="menu-icon">👥</span>
+                  <span className="menu-text">Find a co-host</span>
+                </div>
+                <div className="menu-divider"></div>
+                <div className="menu-item" onClick={() => handleMenuItemClick(() => navigate('/'))}>
+                  <span className="menu-text">Log in or sign up</span>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
 
       </div>
@@ -194,13 +243,14 @@ export default function Navbar({ onSearch }) {
         <div className="search-section">
           <div className="search-item" onClick={handleLocationClick}>
             <span className="search-label">Where</span>
-            <span className="search-value">{searchLocation}</span>
+            <span className="search-value">{searchLocation || 'Homes nearby'}</span>
             {activeSearchField === 'location' && (
               <input
                 type="text"
                 className="search-input"
                 value={searchLocation}
                 onChange={handleLocationChange}
+                onKeyPress={handleLocationKeyPress}
                 placeholder="Enter location"
                 autoFocus
                 onClick={(e) => e.stopPropagation()}

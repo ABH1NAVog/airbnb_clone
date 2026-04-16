@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "../components/card";
+import Footer from "./Footer";
 import "../style/experience.css"
 
 function Experiences() {
@@ -246,7 +247,7 @@ function Experiences() {
           image="" 
         />
       </div>
- 
+      <Footer />
     </div>
   );
 }
