@@ -14,6 +14,14 @@
     align-items: center;
    
 }
+
+.main h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #222;
+    margin: 0 0 24px 0;
+    letter-spacing: -0.3px;
+}
 .images{
     height: 150px;
     width: 100%;
@@ -89,41 +97,61 @@
 .details {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 24px;
 }
 
 /* MAIN TITLE */
 .title {
-    font-size: 28px;
-    font-weight: 600;
+    font-size: 32px;
+    font-weight: 700;
+    color: #222;
+    margin: 0 0 8px 0;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
 }
 
 /* SUB INFO */
 .sub-info {
-    color: #555;
-    font-size: 14px;
+    color: #717171;
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
 }
 
 /* HOST SECTION */
 .host h2 {
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 700;
+    color: #222;
+    margin: 0 0 4px 0;
+    letter-spacing: -0.3px;
 }
 
 .host p {
-    color: #777;
+    color: #717171;
     font-size: 14px;
+    margin: 0;
+    font-weight: 500;
 }
 
 /* FEATURES */
 .feature h3 {
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 700;
+    color: #222;
+    margin: 0 0 6px 0;
+    letter-spacing: -0.3px;
 }
 
 .feature p {
     font-size: 14px;
-    color: #666;
+    color: #717171;
+    margin: 0;
+    line-height: 1.5;
+    font-weight: 400;
 }
 
 /* HR STYLE */
@@ -157,14 +185,17 @@ hr {
 
 /* PRICE */
 .price {
-    font-size: 24px;
-    font-weight: 500;
-    margin-bottom: 10px;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #222;
+    letter-spacing: -0.5px;
 }
 
 .price span {
-    font-weight: 700;
-    text-decoration: underline;
+    font-weight: 800;
+    color: #ff385c;
+    text-decoration: none;
 }
 
 /* DATE BOX - Improved for intuitiveness */
@@ -197,18 +228,19 @@ hr {
 }
 
 .date h6 {
-    font-size: 10px;
-    font-weight: 800;
+    font-size: 11px;
+    font-weight: 700;
     color: #717171;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
     text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .date input {
     border: none;
     background: transparent;
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 15px;
+    font-weight: 600;
     color: #222;
     width: 100%;
     cursor: pointer;
@@ -235,11 +267,12 @@ hr {
 }
 
 .guests h6 {
-    font-size: 10px;
-    font-weight: 800;
+    font-size: 11px;
+    font-weight: 700;
     color: #717171;
     text-transform: uppercase;
     margin: 0;
+    letter-spacing: 0.5px;
 }
 
 .guests .guest-controls {
@@ -286,9 +319,10 @@ hr {
     padding: 12px 16px;
     text-align: center;
     border-radius: 12px;
-    font-size: 12px;
-    color: #555;
+    font-size: 13px;
+    color: #222;
     border: 1px solid #eee;
+    font-weight: 500;
 }
 
 /* BUTTON */
@@ -296,27 +330,29 @@ hr {
     background: linear-gradient(90deg, #ff385c, #e61e4d);
     color: white;
     border: none;
-    padding: 16px;
+    padding: 16px 20px;
     border-radius: 12px;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 700;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all 0.3s;
     margin-top: 10px;
+    letter-spacing: -0.3px;
 }
 
 .reserve-btn:hover {
     background: linear-gradient(90deg, #e31b4a, #d1133a);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(255, 56, 92, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 56, 92, 0.4);
 }
 
 /* NOTE */
 .note {
     text-align: center;
-    font-size: 12px;
-    color: #666;
-    margin-top: 10px;
+    font-size: 13px;
+    color: #717171;
+    margin-top: 12px;
+    font-weight: 500;
 }
 
 /* Responsive adjustments */

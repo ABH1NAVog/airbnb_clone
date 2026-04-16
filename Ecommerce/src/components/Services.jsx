@@ -1,4 +1,5 @@
 import HeartButton from "../components/heartButton";
+import Footer from "./Footer";
 import "../style/services.css";
 
 const topServices = [
@@ -97,7 +98,6 @@ export default function Service() {
             {item.rating && <h5>★ {item.rating}</h5>}
           </div>
         ))}
-      </div>
-    </div>
+      </div>      <Footer />    </div>
   );
 }

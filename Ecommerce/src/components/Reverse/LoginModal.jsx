@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import "./booking.css";
-import { FaAirbnb } from "react-icons/fa6";
 
-const LoginModal = ({ closeModal }) => {
+const LoginModal = ({ closeModal, onContinue }) => {
   const [input, setInput] = useState("");
   const [error, setError] = useState("");
 
@@ -10,7 +9,7 @@ const LoginModal = ({ closeModal }) => {
     if (!input) {
       setError("Please enter email or phone number");
     } else {
-      alert("Logged in successfully!");
+      onContinue?.();
       closeModal();
     }
   };
@@ -23,27 +22,30 @@ const LoginModal = ({ closeModal }) => {
         <span className="close-btn" onClick={closeModal}>✕</span>
 
         {/* LOGO */}
-       <FaAirbnb className="logo-icon" />
+        <img src="/logo.jpeg" alt="Logo" className="modal-logo" />
 
-
-        <h2 className="title">Log in or sign up</h2>
+        <h2 className="title">Welcome to Your Journey</h2>
+        <p className="subtitle">Sign in or create an account to get started</p>
 
         {/* INPUT */}
-        <input
-          type="text"
-          placeholder="Phone number or email"
-          className="input"
-          value={input}
-          onChange={(e) => {
-            setInput(e.target.value);
-            setError("");
-          }}
-        />
-
-        {error && <p className="error">{error}</p>}
+        <div className="input-group">
+          <label className="input-label">Email or Phone Number</label>
+          <input
+            type="text"
+            placeholder="example@email.com or +1234567890"
+            className="input login-input"
+            value={input}
+            onChange={(e) => {
+              setInput(e.target.value);
+              setError("");
+            }}
+            autoFocus
+          />
+          {error && <p className="error">{error}</p>}
+        </div>
 
         {/* BUTTON */}
-        <button className="continue-btn full" onClick={handleContinue}>
+        <button className="continue-btn" onClick={handleContinue}>
           Continue
         </button>
 

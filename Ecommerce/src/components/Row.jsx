@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Card from "./card";
+import Footer from "./Footer";
 import "../style/onePlaceRow.css";
 
 const API_URL = "https://api.npoint.io/af4897d50e5bc4479a28";
@@ -100,6 +101,7 @@ function OnePlaceRow({ searchCity, searchParams, clearSearch }) {
           ))}
         </div>
       ))}
+      <Footer />
     </div>
   );
 }
