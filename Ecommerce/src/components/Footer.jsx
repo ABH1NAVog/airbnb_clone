@@ -22,12 +22,12 @@ const Footer = () => {
       "Hosting resources",
       "Community forum",
     ],
-    Airbnb: [
-      "2025 Summer Release",
-      "Newsroom",
-      "Careers",
-      "Investors",
-      "Airbnb.org emergency stays",
+    Developers: [
+      "Abhinav P",
+      "Aashna Grover",
+      "Prabhjot Singh",
+      "Manjish Agrawal",
+      
     ],
   };
 

@@ -7,7 +7,7 @@ body {
 .navbar {
   background: black;
   color: white;
-  padding: 4px 40px;
+  padding: 4px 20px;
 
   position: sticky;
   top: 0;
@@ -18,6 +18,12 @@ body {
   display: flex;
   flex-direction: column;
   gap: 5px;
+}
+
+@media (min-width: 1024px) {
+  .navbar {
+    padding: 4px 40px;
+  }
 }
 
 /* ─── TOP ROW ──────────────────────────────────────────────── */
@@ -39,12 +45,18 @@ body {
 }
 
 .nav-left img {
-  width: 150px;
+  width: 120px;
+}
+
+@media (min-width: 768px) {
+  .nav-left img {
+    width: 150px;
+  }
 }
 
 /* CENTER — Nav buttons, truly centered between logo and right buttons */
 .nav-center {
-  display: flex;
+  display: none;
   align-items: center;
   gap: 4px;
 
@@ -52,6 +64,12 @@ body {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+}
+
+@media (min-width: 1024px) {
+  .nav-center {
+    display: flex;
+  }
 }
 
 .nav-center button {
@@ -75,8 +93,13 @@ body {
 .nav-right {
   display: flex;
   align-items: center;
-  gap: 14px;
-  /* No flex:1 — just hugs right naturally */
+  gap: 8px;
+}
+
+@media (min-width: 768px) {
+  .nav-right {
+    gap: 14px;
+  }
 }
 
 
@@ -85,9 +108,15 @@ body {
   border: none;
   color: white;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 12px;
   font-family: inherit;
   white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .host-btn {
+    font-size: 14px;
+  }
 }
 
 .menu {
@@ -119,10 +148,16 @@ body {
   border: 1px solid #e0e0e0;
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-  min-width: 280px;
+  min-width: 250px;
   z-index: 1000;
   animation: menuSlideDown 0.2s ease-out;
   overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .dropdown-menu {
+    min-width: 280px;
+  }
 }
 
 @keyframes menuSlideDown {
@@ -144,6 +179,13 @@ body {
   cursor: pointer;
   transition: background 0.2s ease;
   color: #222222;
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  .menu-item {
+    font-size: 15px;
+  }
 }
 
 .menu-item:hover {
@@ -197,7 +239,7 @@ body {
   width: 100%;
   margin: -2px auto 0 auto; /* centers the search bar and moves it up */
 
-  display: flex;
+  display: none;
   align-items: center;
 
   background: #1c1c1c;
@@ -207,6 +249,13 @@ body {
 
   transition: all 0.4s ease;
   position: relative;
+}
+
+/* Show search bar on tablet and desktop */
+@media (min-width: 768px) {
+  .nav-bottom {
+    display: flex;
+  }
 }
 
 .nav-bottom:hover {
@@ -221,6 +270,8 @@ body {
   position: relative;
   z-index: 1;
 }
+
+
 
 .search-item {
   flex: 1;
@@ -390,16 +441,17 @@ body {
   background: #ff385c;
   border: none;
   color: white;
-  width: 42px;
-  height: 42px;
   border-radius: 50%;
   cursor: pointer;
-  font-size: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  transition: background 0.2s, transform 0.15s;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  width: 42px;
+  height: 42px;
+  font-size: 16px;
 }
 
 .search-btn:hover {
