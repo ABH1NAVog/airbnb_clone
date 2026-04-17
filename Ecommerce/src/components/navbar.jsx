@@ -148,7 +148,7 @@ export default function Navbar({ onSearch }) {
     setSearchGuests(count === '0' ? 'Add guests' : `${count} guest${count !== '1' ? 's' : ''}`);
   };
 
-  // Handle search button click
+  // Handle search
   const handleSearch = () => {
     if (!searchLocation) {
       alert('Please enter a location to search');
@@ -168,7 +168,7 @@ export default function Navbar({ onSearch }) {
     if (onSearch) {
       onSearch(searchLocation, searchData);
     }
-    
+
     setActiveSearchField(null);
   };
 
@@ -212,7 +212,17 @@ export default function Navbar({ onSearch }) {
                   <span className="menu-text">Help Centre</span>
                 </div>
                 <div className="menu-divider"></div>
-                <div className="menu-item" onClick={() => handleMenuItemClick(() => navigate('/'))}>                  <span className="menu-icon">🏠</span>
+                <div className="menu-item" onClick={() => handleMenuItemClick(() => navigate('/experiences'))}>
+                  <span className="menu-icon">🎈</span>
+                  <span className="menu-text">Experiences</span>
+                </div>
+                <div className="menu-item" onClick={() => handleMenuItemClick(() => navigate('/services'))}>
+                  <span className="menu-icon">🛎️</span>
+                  <span className="menu-text">Services</span>
+                </div>
+                <div className="menu-divider"></div>
+                <div className="menu-item" onClick={() => handleMenuItemClick(() => navigate('/'))}>
+                  <span className="menu-icon">🏠</span>
                   <div className="menu-item-content">
                     <span className="menu-text-bold">Become a host</span>
                     <span className="menu-text-small">It's easy to start hosting and earn extra income.</span>
@@ -237,7 +247,6 @@ export default function Navbar({ onSearch }) {
 
       </div>
 
-     
       <div className={`nav-bottom ${scrolled ? "compact" : "expanded"}`}>
 
         <div className="search-section">
@@ -328,7 +337,9 @@ export default function Navbar({ onSearch }) {
           </div>
         </div>
 
-        <button className="search-btn" onClick={handleSearch}>🔍</button>
+        <button className="search-btn" onClick={handleSearch}>
+          🔍
+        </button>
 
       </div>
 

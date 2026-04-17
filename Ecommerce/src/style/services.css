@@ -1,31 +1,97 @@
 .service-page {
-  padding: 40px 80px;
+  padding: 20px 16px;
   font-family: Arial, sans-serif;
   background: white;
 }
 
+@media (min-width: 768px) {
+  .service-page {
+    padding: 40px 30px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .service-page {
+    padding: 40px 80px;
+  }
+}
+
 .service-page h1 {
-  font-size: 48px;
-  margin: 50px 0 30px;
+  font-size: 32px;
+  margin: 30px 0 20px;
+}
+
+@media (min-width: 768px) {
+  .service-page h1 {
+    font-size: 40px;
+    margin: 40px 0 25px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .service-page h1 {
+    font-size: 48px;
+    margin: 50px 0 30px;
+  }
 }
 
 .service-page h2 {
-  font-size: 38px;
-  margin-bottom: 25px;
+  font-size: 24px;
+  margin-bottom: 18px;
+}
+
+@media (min-width: 768px) {
+  .service-page h2 {
+    font-size: 30px;
+    margin-bottom: 22px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .service-page h2 {
+    font-size: 38px;
+    margin-bottom: 25px;
+  }
 }
 
 .section-title {
-  font-size: 30px;
-  margin-bottom: 25px;
+  font-size: 22px;
+  margin-bottom: 18px;
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 26px;
+    margin-bottom: 22px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-title {
+    font-size: 30px;
+    margin-bottom: 25px;
+  }
 }
 
 /* ---------- TOP SMALL CARDS ---------- */
 .top-services-row {
   display: flex;
-  gap: 18px;
+  gap: 12px;
   overflow-x: auto;
   scroll-behavior: smooth;
   padding-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+  .top-services-row {
+    gap: 15px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .top-services-row {
+    gap: 18px;
+  }
 }
 
 .top-services-row::-webkit-scrollbar {
@@ -33,36 +99,103 @@
 }
 
 .small-service-card {
-  min-width: 180px;
+  min-width: 140px;
   flex-shrink: 0;
 }
 
+@media (min-width: 768px) {
+  .small-service-card {
+    min-width: 160px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .small-service-card {
+    min-width: 180px;
+  }
+}
+
 .small-image-placeholder {
-  width: 180px;
-  height: 160px;
-  border-radius: 20px;
+  width: 100%;
+  height: 120px;
+  border-radius: 16px;
   background: #e8e8e8;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
+}
+
+@media (min-width: 768px) {
+  .small-image-placeholder {
+    height: 140px;
+    border-radius: 18px;
+    margin-bottom: 10px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .small-image-placeholder {
+    width: 180px;
+    height: 160px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
 }
 
 .small-service-card h4 {
-  font-size: 24px;
+  font-size: 16px;
   margin: 0;
 }
 
+@media (min-width: 768px) {
+  .small-service-card h4 {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .small-service-card h4 {
+    font-size: 24px;
+  }
+}
+
 .small-service-card p {
-  font-size: 18px;
+  font-size: 13px;
   color: gray;
-  margin-top: 6px;
+  margin-top: 4px;
+}
+
+@media (min-width: 768px) {
+  .small-service-card p {
+    font-size: 15px;
+    margin-top: 5px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .small-service-card p {
+    font-size: 18px;
+    margin-top: 6px;
+  }
 }
 
 /* ---------- BOTTOM LARGE CARDS UPDATED ---------- */
 .bottom-services-row {
   display: flex;
-  gap: 20px;
+  gap: 12px;
   overflow-x: auto;
   scroll-behavior: smooth;
   padding-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+  .bottom-services-row {
+    gap: 15px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .bottom-services-row {
+    gap: 20px;
+  }
 }
 
 .bottom-services-row::-webkit-scrollbar {
@@ -70,44 +203,127 @@
 }
 
 .large-service-card {
-  width: 180px;
-  min-width: 180px;
+  width: 140px;
+  min-width: 140px;
   flex-shrink: 0;
   overflow: hidden;
   font-family: Arial, sans-serif;
 }
 
+@media (min-width: 768px) {
+  .large-service-card {
+    width: 160px;
+    min-width: 160px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .large-service-card {
+    width: 180px;
+    min-width: 180px;
+  }
+}
+
 .large-image-placeholder {
   width: 100%;
-  height: 160px;
-  border-radius: 12px;
+  height: 120px;
+  border-radius: 10px;
   background: #e6e6e6;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  margin-bottom: 8px;
+}
+
+@media (min-width: 768px) {
+  .large-image-placeholder {
+    height: 140px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .large-image-placeholder {
+    height: 160px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
 }
 
 .large-service-card h3 {
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 600;
-  margin: 0 0 4px;
-  line-height: 1.4;
+  margin: 0 0 2px;
+  line-height: 1.3;
+}
+
+@media (min-width: 768px) {
+  .large-service-card h3 {
+    font-size: 14px;
+    margin: 0 0 3px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .large-service-card h3 {
+    font-size: 15px;
+    margin: 0 0 4px;
+  }
 }
 
 .large-service-card p {
-  font-size: 14px;
+  font-size: 12px;
   color: #555;
-  margin: 0 0 6px;
+  margin: 0 0 4px;
+}
+
+@media (min-width: 768px) {
+  .large-service-card p {
+    font-size: 13px;
+    margin: 0 0 5px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .large-service-card p {
+    font-size: 14px;
+    margin: 0 0 6px;
+  }
 }
 
 .large-service-card span {
   display: block;
-  font-size: 13px;
+  font-size: 11px;
   color: #777;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
+}
+
+@media (min-width: 768px) {
+  .large-service-card span {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .large-service-card span {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
 }
 
 .large-service-card h5 {
-  font-size: 13px;
+  font-size: 12px;
   margin: 0;
   color: #222;
+}
+
+@media (min-width: 768px) {
+  .large-service-card h5 {
+    font-size: 12.5px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .large-service-card h5 {
+    font-size: 13px;
+  }
 }
