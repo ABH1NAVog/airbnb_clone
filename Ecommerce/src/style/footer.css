@@ -194,6 +194,16 @@
   cursor: pointer;
 }
 
+.footer-column p.clickable {
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.footer-column p.clickable:hover {
+  color: #222;
+  text-decoration: underline;
+}
+
 @media (min-width: 768px) {
   .footer-column p {
     margin-bottom: 12px;

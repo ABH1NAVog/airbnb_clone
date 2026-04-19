@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
+import HostingModal from './HostingModal';
 import '../style/navbar.css';
 
 export default function Navbar({ onSearch }) {
   const navigate = useNavigate();
+  const location = useLocation();
+  const [showHostingModal, setShowHostingModal] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [searchLocation, setSearchLocation] = useState('');
   const [searchDate, setSearchDate] = useState('Any week');
@@ -194,20 +197,20 @@ export default function Navbar({ onSearch }) {
         {/* CENTER — Nav links centered in the middle of the screen */}
         {!scrolled && (
           <div className="nav-center">
-            <button onClick={() => navigate('/')}>🏠 Homes</button>
-            <button onClick={() => navigate('/experiences')}>🎈 Experiences</button>
-            <button onClick={() => navigate('/services')}>🛎️ Services</button>
+            <button className={location.pathname === '/' ? 'active' : ''} onClick={() => navigate('/')}>🏠 Homes</button>
+            <button className={location.pathname === '/experiences' ? 'active' : ''} onClick={() => navigate('/experiences')}>🎈 Experiences</button>
+            <button className={location.pathname === '/services' ? 'active' : ''} onClick={() => navigate('/services')}>🛎️ Services</button>
           </div>
         )}
 
 
         <div className="nav-right">
-          <button className="host-btn">Become a host</button>
+          <button className="host-btn" onClick={() => setShowHostingModal(true)}>Become a host</button>
           <div className="menu" onClick={handleMenuToggle}>
             ☰
             {showMenu && (
               <div className="dropdown-menu">
-                <div className="menu-item">
+                <div className="menu-item" onClick={() => handleMenuItemClick(() => navigate('/help-center'))}>
                   <span className="menu-icon">❓</span>
                   <span className="menu-text">Help Centre</span>
                 </div>
@@ -344,6 +347,8 @@ export default function Navbar({ onSearch }) {
       </div>
 
     </div>
+    
+    <HostingModal isOpen={showHostingModal} onClose={() => setShowHostingModal(false)} />
   
     </>
   );

@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../style/Footer.css";
 import footerTabs from '../data/footerapi'
 
 const Footer = () => {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("Popular");
 
   const bottomLinks = {
@@ -26,9 +28,28 @@ const Footer = () => {
       "Abhinav P",
       "Aashna Grover",
       "Prabhjot Singh",
-      "Manjish Agrawal",
-      
+      "Manjish Kumar",
+      "Group"
     ],
+  };
+
+  const handleLinkClick = (link) => {
+    if (link === "Help Centre") {
+      navigate("/help-center");
+    }
+    
+    // Developer GitHub links
+    const developerLinks = {
+      "Abhinav P": "https://github.com/ABH1NAVog",
+      "Aashna Grover": "https://github.com/ashnagrover00-collab",
+      "Prabhjot Singh": "https://github.com/Webdev0032",
+      "Manjish Kumar": "https://github.com/Manjish24",
+      "Group": "https://github.com/ABH1NAVog/airbnb_clone"
+    };
+    
+    if (developerLinks[link]) {
+      window.open(developerLinks[link], "_blank");
+    }
   };
 
   return (
@@ -62,9 +83,21 @@ const Footer = () => {
         {Object.entries(bottomLinks).map(([section, links]) => (
           <div key={section} className="footer-column">
             <h3>{section}</h3>
-            {links.map((link, index) => (
-              <p key={index}>{link}</p>
-            ))}
+            {links.map((link, index) => {
+              const isClickable = 
+                link === "Help Centre" || 
+                ["Abhinav P", "Aashna Grover", "Prabhjot Singh", "Manjish Kumar", "Group"].includes(link);
+              
+              return (
+                <p 
+                  key={index} 
+                  onClick={() => handleLinkClick(link)}
+                  className={isClickable ? "clickable" : ""}
+                >
+                  {link}
+                </p>
+              );
+            })}
           </div>
         ))}
       </div>

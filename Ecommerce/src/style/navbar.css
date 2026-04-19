@@ -82,11 +82,18 @@ body {
   border-radius: 25px;
   transition: background 0.2s, color 0.2s;
   font-family: inherit;
+  position: relative;
 }
 
 .nav-center button:hover {
   background: #1a1a1a;
   color: white;
+}
+
+.nav-center button.active {
+  color: white;
+  border-bottom: 2px solid white;
+  padding-bottom: 4px;
 }
 
 /* RIGHT — Filters + host + menu */

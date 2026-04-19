@@ -1,0 +1,282 @@
+/* ─── HELP CENTER CONTAINER ─────────────────────────────────────── */
+.help-center {
+  background: #f7f7f7;
+  min-height: calc(100vh - 200px);
+  padding: 40px 20px;
+}
+
+@media (min-width: 768px) {
+  .help-center {
+    padding: 60px 40px;
+  }
+}
+
+/* ─── HEADER ─────────────────────────────────────────────────── */
+.help-center-header {
+  max-width: 800px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+.help-center-header h1 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #222;
+}
+
+@media (min-width: 768px) {
+  .help-center-header h1 {
+    font-size: 40px;
+  }
+}
+
+/* ─── SEARCH BAR ─────────────────────────────────────────────── */
+.search-bar {
+  display: flex;
+  gap: 0;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 12px 18px;
+  border: 1px solid #ddd;
+  border-radius: 25px 0 0 25px;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.search-bar input:focus {
+  border-color: #ccc;
+}
+
+.search-bar button {
+  background: #ff385c;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 0 25px 25px 0;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.2s;
+}
+
+.search-bar button:hover {
+  background: #ff2a4a;
+}
+
+/* ─── TABS ─────────────────────────────────────────────────── */
+.help-center-tabs {
+  max-width: 1200px;
+  margin: 60px auto 40px;
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid #ddd;
+  flex-wrap: wrap;
+}
+
+.help-center-tabs .tab {
+  background: none;
+  border: none;
+  padding: 12px 20px;
+  font-size: 14px;
+  color: #666;
+  cursor: pointer;
+  transition: color 0.2s;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  font-family: inherit;
+  font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  .help-center-tabs .tab {
+    font-size: 15px;
+    padding: 14px 24px;
+  }
+}
+
+.help-center-tabs .tab:hover {
+  color: #222;
+}
+
+.help-center-tabs .tab.active {
+  color: #222;
+  border-bottom-color: #222;
+}
+
+/* ─── CONTENT SECTION ─────────────────────────────────────────── */
+.help-center-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ─── HELP SECTION ─────────────────────────────────────────── */
+.help-section {
+  margin: 40px 0;
+}
+
+.help-section h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+.help-box {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .help-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.help-text {
+  flex: 1;
+}
+
+.help-text p {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+  line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  .help-text p {
+    font-size: 15px;
+  }
+}
+
+.login-btn {
+  background: #ff385c;
+  border: none;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .login-btn {
+    padding: 14px 32px;
+    font-size: 15px;
+  }
+}
+
+.login-btn:hover {
+  background: #ff2a4a;
+}
+
+/* ─── GUIDES SECTION ─────────────────────────────────────────── */
+.guides-section {
+  margin: 60px 0;
+}
+
+.guides-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.guides-header h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #222;
+  margin: 0;
+}
+
+.browse-all {
+  color: #666;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.browse-all:hover {
+  color: #222;
+  text-decoration: underline;
+}
+
+/* ─── GUIDES GRID ─────────────────────────────────────────── */
+.guides-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .guides-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+/* ─── GUIDE CARD ─────────────────────────────────────────── */
+.guide-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.guide-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.guide-icon {
+  background: #222;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+}
+
+.guide-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #222;
+  margin: 20px 20px 10px;
+  padding: 0;
+}
+
+@media (min-width: 768px) {
+  .guide-card h3 {
+    font-size: 17px;
+  }
+}
+
+.guide-card p {
+  font-size: 13px;
+  color: #666;
+  margin: 0 20px 20px;
+  padding: 0;
+}
+
+@media (min-width: 768px) {
+  .guide-card p {
+    font-size: 14px;
+  }
+}

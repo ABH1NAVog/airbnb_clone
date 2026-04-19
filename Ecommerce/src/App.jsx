@@ -7,6 +7,7 @@ import Product_details from './components/product_details';
 import BookingPage from './components/Reverse/BookingPage';
 import Experiences from './components/experience';
 import Service from './components/Services';
+import HelpCenter from './components/HelpCenter';
 
 export default function App() {
   const [searchCity, setSearchCity] = useState(null);
@@ -31,6 +32,7 @@ export default function App() {
         <Route path="/booking" element={<BookingPage />} /> {/* Booking page */}
         <Route path="/experiences" element={<Experiences />} /> {/* Experiences page */}
         <Route path="/services" element={<Service />} /> {/* Services page */}
+        <Route path="/help-center" element={<HelpCenter />} /> {/* Help Center page */}
       </Routes>
     </Router>
   );
