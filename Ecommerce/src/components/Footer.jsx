@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../style/Footer.css";
+import "../style/footer.css";
 import footerTabs from '../data/footerapi'
 
 const Footer = () => {
