@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import HostingModal from './HostingModal';
+import LoginModal from './Reverse/LoginModal';
 import '../style/navbar.css';
 
 export default function Navbar({ onSearch }) {
   const navigate = useNavigate();
   const location = useLocation();
   const [showHostingModal, setShowHostingModal] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [searchLocation, setSearchLocation] = useState('');
   const [searchDate, setSearchDate] = useState('Any week');
@@ -240,7 +242,10 @@ export default function Navbar({ onSearch }) {
                   <span className="menu-text">Find a co-host</span>
                 </div>
                 <div className="menu-divider"></div>
-                <div className="menu-item" onClick={() => handleMenuItemClick(() => navigate('/'))}>
+                <div className="menu-item" onClick={() => {
+                  setShowMenu(false);
+                  setShowLoginModal(true);
+                }}>
                   <span className="menu-text">Log in or sign up</span>
                 </div>
               </div>
@@ -348,8 +353,12 @@ export default function Navbar({ onSearch }) {
 
     </div>
     
-    <HostingModal isOpen={showHostingModal} onClose={() => setShowHostingModal(false)} />
-  
+    <HostingModal isOpen={showHostingModal} onClose={() => setShowHostingModal(false)} />    {showLoginModal && (
+      <LoginModal 
+        closeModal={() => setShowLoginModal(false)} 
+        onContinue={() => setShowLoginModal(false)}
+      />
+    )}  
     </>
   );
 }
